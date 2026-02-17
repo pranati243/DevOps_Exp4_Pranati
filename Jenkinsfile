@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/pranati243/DevOps_Exp4_Praanti.git'
+                git branch: 'main', url: 'https://github.com/pranati243/DevOps_Exp4_Pranati.git'
                  
             }
         }
