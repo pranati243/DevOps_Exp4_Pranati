@@ -2,16 +2,14 @@ pipeline {
     agent any
 
     tools {
-    maven 'Maven-3.9'
-    jdk 'jdk21'
-}
-
+        maven 'Maven-3.9'
+        jdk 'jdk21'
+    }
 
     stages {
         stage('Checkout Code') {
             steps {
                 git branch: 'main', url: 'https://github.com/pranati243/DevOps_Exp4_Pranati.git'
-                 
             }
         }
 
@@ -25,9 +23,9 @@ pipeline {
             steps {
                 deploy adapters: [
                     tomcat9(
-                        credentialsId: 'tomcat-creds',
+                        credentialsId: 'tomcat-creds',   // Make sure this matches your Jenkins credentials
                         path: '',
-                        url: 'http://localhost:8081'
+                        url: 'http://127.0.0.1:8081/manager/text'
                     )
                 ],
                 contextPath: 'my-webapp',
